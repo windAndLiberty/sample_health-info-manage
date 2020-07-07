@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+[name]{
+   text-align: left;
+   margin-top: 15px;
+}
+body{
+    background:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591537333533&di=8c868648d92b3d01666971806d1d7414&imgtype=0&src=http%3A%2F%2Fpic25.nipic.com%2F20121116%2F9252150_144336550000_2.jpg) repeat;
+}
+iframe{
+  top: 10%;
+  float:center;
+  padding: 10px;
+ <!-- background-color: #cae8ca;-->  
+  text-align:center;
+}
+
+form {
+  top: 10%;
+  margin: auto;
+  width: 50%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  background-color: #cae8ca;
+  text-align:center;
+}
+
+</style>
+</head>
+<body>
+<h3>修改个人信息：</h3>
+<form name="myForm" id="myForm" action="hms_selectOneEditable.php" onsubmit="return validatePhoneNum()" method="post" target="frame1">
+
+<label for="phoneNum">手机号码：</label>
+<input type="text" name="phoneNum" id="phoneNum" maxlength="11" required><br>
+
+ <input type="reset" value="重置" style="cursor:pointer;position:relative;left:300px;bottom:22px">
+ <input type="submit" value="提交" style="cursor:pointer;position:relative;left:325px;bottom:22px" >
+
+</form>
+
+
+<iframe src="" frameborder="0" id="frame1" name="frame1" width="95%" height = "600px"></iframe>
+
+
+<script>
+function validatePhoneNum(){
+   var patt = /^\d{11}$/;
+   if(patt.test(document.forms["myForm"]["phoneNum"].value)){
+         return true;
+   }else{
+	     alert('需要输入11位数字的手机号码');
+         return false;
+   }
+}
+
+
+</script>
+</body>
+</html>

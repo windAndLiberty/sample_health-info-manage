@@ -1,0 +1,74 @@
+<html>
+<head>
+<style>
+[name]{
+   text-align: left;
+   margin-top: 15px;
+}
+body{
+    background:url(http://image.biaobaiju.com/uploads/20190908/23/1567956841-HTmUsoIvQK.jpg) repeat;
+}
+iframe{
+  top: 10%;
+  float:center;
+  padding: 10px;
+ <!-- background-color: #cae8ca;-->  
+  text-align:center;
+}
+
+form {
+  top: 10%;
+  margin: auto;
+  width: 50%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  background-color: #cae8ca;
+  text-align:center;
+}
+
+</style>
+</head>
+<body>
+<h3>删除个人信息：</h3>
+<form name="myForm" id="myForm" action="hms_selectOne.php" onsubmit="return validatePhoneNum()" method="post" target="frame1">
+
+<label for="phoneNum">手机号码：</label>
+<input type="text" name="phoneNum" id="phoneNum" maxlength="11" required><br>
+
+ <input type="reset" value="重置" style="cursor:pointer;position:relative;left:300px;bottom:22px">
+ <input type="submit" value="验证" style="cursor:pointer;position:relative;left:325px;bottom:22px" >
+
+</form>
+
+<button form = "myForm" type="submit" formaction="hms_deleteOne.php"  style="   
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float:right; 
+    position:relative;
+    bottom:80px;" >删除</button>
+<iframe src="" frameborder="0" id="frame1" name="frame1" width="95%" height = "600px"></iframe>
+
+
+<script>
+function validatePhoneNum(){
+   var patt = /^\d{11}$/;
+   if(patt.test(document.forms["myForm"]["phoneNum"].value)){
+         return true;
+   }else{
+	     alert('需要输入11位数字的手机号码');
+         return false;
+   }
+}
+
+
+</script>
+</body>
+</html>
